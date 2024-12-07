@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electrical Calculation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 1200px;
+      gap: 20px;
+    }
+    .power-source {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .power-source img {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+    }
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center; /* Align the text horizontally */
+      justify-content: flex-start;
+      padding: 20px;
+      pointer-events: none;
+    }
+
+    .image-overlay2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px;
+      pointer-events: none;
+
+    }
+
+    .overlay-text {
+      font-size: 15px;
+      font-weight: bold;
+      color: black;
+      padding: 5px 15px;
+      border-radius: 10px;
+      margin-right: 21px; /* space between each overlay text */
+    }
+    .inputs {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .inputs label {
+      font-size: 16px;
+    }
+    .inputs input {
+      width: 80px;
+      padding: 5px;
+      font-size: 14px;
+    }
+    .tables {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 60px;
+      text-align: center;
+    }
+    .overload {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Electrical Calculation</h1>
+
+  <div class="container">
+    <!-- Power Source Section -->
+    <div class="power-source">
+      <img id="powerSourceImg" src="meter.png" alt="Power Source">
+      <div class="image-overlay">
+        <div id="currentOverlay" class="overlay-text">91mA</div>
+        <div id="voltageR1Overlay" class="overlay-text">3.5V</div>
+        <div id="voltageR2Overlay" class="overlay-text">2.5V</div>
+      </div>
+      <div class="image-overlay2">
+        <div id="voltageOverlay" class="overlay-text">5V</div>
+        <div id="frequencyOverlay" class="overlay-text">50Hz</div>
+      </div>
+      
+      <div class="inputs">
+        <label for="u">Voltage (V): <input id="u" type="number" value="5"></label>
+        <label for="f">Frequency (Hz): <input id="f" type="number" value="50"></label>
+      </div>
+    </div>
+
+    <!-- Tables Section -->
+    <div class="tables">
+      <!-- Input Table -->
+      <table>
+        <tr>
+          <th>Enter a Value</th>
+          <th>Symbol</th>
+          <th>Value</th>
+          <th>Unit</th>
+        </tr>
+        <tr>
+          <td>Resistance 1</td>
+          <td>R1</td>
+          <td><input id="r1" type="number" value="39"></td>
+          <td>Ω</td>
+        </tr>
+        <tr>
+          <td>Resistance 2</td>
+          <td>R2</td>
+          <td><input id="r2" type="number" value="27"></td>
+          <td>Ω</td>
+        </tr>
+      </table>
+
+      <!-- Calculation Results Table -->
+      <table>
+        <tr>
+          <th>Calculation</th>
+          <th>Symbol</th>
+          <th>Result</th>
+          <th>Unit</th>
+        </tr>
+        <tr>
+          <td>Current</td>
+          <td>I</td>
+          <td id="i">91</td>
+          <td>mA</td>
+        </tr>
+        <tr>
+          <td>Voltage on R1</td>
+          <td>U1</td>
+          <td id="u1">3.5</td>
+          <td>V</td>
+        </tr>
+        <tr>
+          <td>Voltage on R2</td>
+          <td>U2</td>
+          <td id="u2">2.5</td>
+          <td>V</td>
+        </tr>
+        <tr>
+          <td>Power on R1</td>
+          <td>P1</td>
+          <td id="p1">322</td>
+          <td>mW</td>
+        </tr>
+        <tr>
+          <td>Power on R2</td>
+          <td>P2</td>
+          <td id="p2">223</td>
+          <td>mW</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function updateCalculations() {
+      // Get input values
+      const U = parseFloat(document.getElementById("u").value);
+      const R1 = parseFloat(document.getElementById("r1").value);
+      const R2 = parseFloat(document.getElementById("r2").value);
+
+      // Perform calculations
+      const I = (U / (R1 + R2)) * 1000; // in mA
+      const U1 = (I / 1000) * R1;       // in V
+      const U2 = (I / 1000) * R2;       // in V
+      const P1 = U1 * (I / 1000) * 1000; // in mW
+      const P2 = U2 * (I / 1000) * 1000; // in mW
+
+      // Update results
+      document.getElementById("i").textContent = I > 200 ? "OL" : I.toFixed(1);
+      document.getElementById("u1").textContent = U1.toFixed(1);
+      document.getElementById("u2").textContent = U2.toFixed(1);
+      document.getElementById("p1").textContent = P1.toFixed(1);
+      document.getElementById("p2").textContent = P2.toFixed(1);
+
+      // Highlight overload condition
+      document.getElementById("i").className = I > 200 ? "overload" : "";
+
+      // Update overlay text
+      document.getElementById("currentOverlay").textContent = `${I.toFixed(1)}`;
+      document.getElementById("voltageR1Overlay").textContent = `${U1.toFixed(1)}`;
+      document.getElementById("voltageR2Overlay").textContent = `${U2.toFixed(1)}`;
+      document.getElementById("voltageOverlay").textContent = `${U}V`;
+      document.getElementById("frequencyOverlay").textContent = `${document.getElementById("f").value}Hz`;
+      
+
+    }
+
+    // Attach event listeners to inputs
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", updateCalculations);
+    });
+
+    // Initial calculation
+    updateCalculations();
+  </script>
+</body>
+</html>
