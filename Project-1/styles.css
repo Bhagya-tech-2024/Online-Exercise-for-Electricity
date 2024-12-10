@@ -13,14 +13,12 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap; 
-  justify-content: space-between;
 }
 
 .left-panel {
   position: relative;
   flex: 1;
   min-width: 300px;
-  max-width: 600px;  /* Max width for larger screens */
 }
 
 .image-container {
@@ -50,13 +48,109 @@ body {
   font-weight: bold;
 }
 
+/* Adjust the position for the overlay text for desktop */
+.overlay-text#frequency-display {
+  left: 25px;
+  top: 35px;
+}
+
+.overlay-text#current-display {
+  left: 170px;
+  top: 12px;
+}
+
+.overlay-text#r1-voltage-display {
+  top: 12px;
+  left: 220px;
+}
+
+.overlay-text#r2-voltage-display {
+  top: 12px;
+  left: 265px;
+}
+
+.overlay-text#voltage-display {
+  left: 25px;
+  top: 18px;
+}
+
+.overlay-text#voltage-display-bottom {
+  left: 35px;
+  bottom: 95px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .overlay-text#frequency-display {
+    left: 10px;
+    top: 10px;
+  }
+
+  .overlay-text#current-display {
+    left: 100px;
+    top: 5px;
+  }
+
+  .overlay-text#r1-voltage-display {
+    top: 10px;
+    left: 150px;
+  }
+
+  .overlay-text#r2-voltage-display {
+    top: 10px;
+    left: 190px;
+  }
+
+  .overlay-text#voltage-display {
+    left: 10px;
+    top: 10px;
+  }
+
+  .overlay-text#voltage-display-bottom {
+    left: 15px;
+    bottom: 60px;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .overlay-text#frequency-display {
+    left: 15px;
+    top: 20px;
+  }
+
+  .overlay-text#current-display {
+    left: 120px;
+    top: 10px;
+  }
+
+  .overlay-text#r1-voltage-display {
+    top: 15px;
+    left: 200px;
+  }
+
+  .overlay-text#r2-voltage-display {
+    top: 15px;
+    left: 240px;
+  }
+
+  .overlay-text#voltage-display {
+    left: 15px;
+    top: 15px;
+  }
+
+  .overlay-text#voltage-display-bottom {
+    left: 20px;
+    bottom: 80px;
+  }
+}
+
 .right-panel {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
   min-width: 300px;
-  max-width: 600px;  /* Max width for larger screens */
 }
 
 .right-panel label {
@@ -108,71 +202,4 @@ body {
 
 #overload-strip.overloaded {
   background-color: red;
-}
-
-/* Media Queries for responsiveness */
-
-/* For Tablets */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .left-panel,
-  .right-panel {
-    max-width: 100%;
-  }
-
-  .image-container {
-    width: 100%;
-    height: auto;
-  }
-
-  #results {
-    font-size: 0.7em;
-    width: 90%;
-  }
-}
-
-/* For Mobile Devices */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px; /* Smaller font size for mobile */
-  }
-
-  .container {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .left-panel,
-  .right-panel {
-    max-width: 100%;
-  }
-
-  .image-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .overlay-text {
-    font-size: 0.3em; /* Adjust overlay text for smaller screens */
-  }
-
-  #results {
-    font-size: 0.6em;
-    width: 100%;
-  }
-
-  #voltage,
-  #frequency,
-  #resistor1,
-  #resistor2 {
-    font-size: 0.9em;
-  }
-
-  #overload-strip {
-    height: 8px; /* Smaller overload strip for mobile */
-  }
 }
