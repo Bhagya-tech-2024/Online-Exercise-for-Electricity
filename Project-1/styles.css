@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f4f4f9;
 }
 
@@ -15,22 +15,18 @@ body {
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 10px;
-  box-sizing: border-box;
 }
 
 .image-top {
   flex: 2;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .image-container {
   position: relative;
-  width: 100%;
-  max-width: 500px;
+  width: 500px; /* Responsive scaling can be applied */
   height: auto;
 }
 
@@ -53,25 +49,52 @@ body {
   font-size: 0.6em;
   color: black;
   font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+#frequency-display {
+  top: 18%;
+  left: 9%;
+}
+
+#current-display {
+  top: 8%;
+  left: 60%;
+}
+
+#r1-voltage-display {
+  top: 8%;
+  left: 75%;
+}
+
+#r2-voltage-display {
+  top: 8%;
+  left: 90%;
+}
+
+#voltage-display {
+  top: 10%;
+  left: 9%;
+}
+
+#voltage-display-bottom {
+  bottom: 43%;
+  left: 13%;
 }
 
 .bottom-panels {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
   width: 100%;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .calculation-panel, .results-panel {
   flex: 1;
-  width: 100%;
-  max-width: 600px;
+  min-width: 300px;
   padding: 10px;
   box-sizing: border-box;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .calculation-panel label {
@@ -84,7 +107,6 @@ body {
   font-size: 1em;
   margin-bottom: 10px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .calculation-panel button {
@@ -110,44 +132,18 @@ body {
   width: 100%;
   height: 10px;
   background-color: lightgreen;
-  border-radius: 5px;
 }
 
 #overload-strip.overloaded {
   background-color: red;
 }
 
-/* Media Query for Tablets and Larger Screens */
-@media (min-width: 768px) {
-  .bottom-panels {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .calculation-panel, .results-panel {
-    flex: 1;
-    min-width: 300px;
-    max-width: 45%;
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 0.4em; /* Scale text size for smaller screens */
   }
 
   .image-container {
-    max-width: 500px;
-  }
-}
-
-/* Media Query for Small Mobile Screens */
-@media (max-width: 480px) {
-  .overlay-text {
-    font-size: 0.5em;
-  }
-
-  .calculation-panel label, 
-  .calculation-panel input, 
-  .calculation-panel button {
-    font-size: 0.9em;
-  }
-
-  h2, h3 {
-    font-size: 1.2em;
+    width: 90%; /* Ensure the image is responsive */
   }
 }
