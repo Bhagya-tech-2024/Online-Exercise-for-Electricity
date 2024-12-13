@@ -14,25 +14,29 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 700px; 
+  
 }
 
 .image-top {
-  flex: 2;
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  width: 100%; 
 }
 
 .image-container {
   position: relative;
-  width: 500px; /* Responsive scaling can be applied */
+  width: 100%; 
+  max-width: 500px; 
   height: auto;
+  margin-bottom: 2px; 
 }
 
+
 .meter-image {
-  width: 100%;
-  display: block;
+  width: 100%; 
+  height: auto; 
 }
 
 .overlay {
@@ -64,12 +68,12 @@ body {
 
 #r1-voltage-display {
   top: 8%;
-  left: 75%;
+  left: 76%;
 }
 
 #r2-voltage-display {
   top: 8%;
-  left: 90%;
+  left: 91%;
 }
 
 #voltage-display {
@@ -78,23 +82,26 @@ body {
 }
 
 #voltage-display-bottom {
-  bottom: 43%;
+  bottom: 44%;
   left: 13%;
 }
 
 .bottom-panels {
-  flex: 1;
   display: flex;
-  width: 100%;
+  flex-direction: row; 
   justify-content: space-between;
   gap: 15px;
+  width: 100%; 
+  max-width: 500px; 
+  margin: 0 auto; 
 }
 
 .calculation-panel, .results-panel {
-  flex: 1;
-  min-width: 300px;
+  flex: 1; 
   padding: 10px;
   box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .calculation-panel label {
@@ -124,8 +131,7 @@ body {
 }
 
 .results-panel {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  padding: 15px;
 }
 
 #overload-strip {
@@ -143,7 +149,7 @@ body {
     font-size: 0.4em; /* Scale text size for smaller screens */
   }
 
-  .image-container {
-    width: 90%; /* Ensure the image is responsive */
+  .main-container {
+    max-width: 90%; /* responsiveness on smaller screens */
   }
 }
