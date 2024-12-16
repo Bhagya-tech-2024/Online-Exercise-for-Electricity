@@ -14,13 +14,13 @@ function calculate() {
     // Update the results panel
     document.getElementById('result-voltage').textContent = `${voltage} V`;
     document.getElementById('result-frequency').textContent = `${frequency} Hz`;
-    document.getElementById('result-current').textContent = `${current.toFixed(2)} mA`;
+    document.getElementById('result-current').textContent = `${current.toFixed(2)} A`;
     document.getElementById('result-r1-voltage').textContent = `${voltageAcrossR1.toFixed(2)} V`;
     document.getElementById('result-r2-voltage').textContent = `${voltageAcrossR2.toFixed(2)} V`;
   
     // Update the image overlay text with the calculated values
     document.getElementById('frequency-display').textContent = `${frequency} Hz`;
-    document.getElementById('current-display').textContent = `${current.toFixed(2)} mA`;
+    document.getElementById('current-display').textContent = `${current.toFixed(2)} A`;
     document.getElementById('r1-voltage-display').textContent = `${voltageAcrossR1.toFixed(2)} V`;
     document.getElementById('r2-voltage-display').textContent = `${voltageAcrossR2.toFixed(2)} V`;
     document.getElementById('voltage-display').textContent = `${voltage} V`;
