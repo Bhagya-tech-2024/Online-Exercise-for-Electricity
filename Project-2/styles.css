@@ -73,7 +73,7 @@ body {
   
   #current2-display {
     top: 7%;
-    left: 91.5%;
+    left: 91.5%; /*changed */
   }
   
   #voltage-display {
