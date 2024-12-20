@@ -33,8 +33,6 @@ function calculate() {
   // Update the image overlay text with calculated values
   document.getElementById('frequency-display').textContent = `${frequency} Hz`;
   document.getElementById('current-display').textContent = currentDisplay;
-  document.getElementById('inductance-display').textContent = `${inductance.toFixed(6)} H`;
-  document.getElementById('inductivereactance-display').textContent = `${inductiveReactance.toFixed(2)} Ω`;
   document.getElementById('voltage-display').textContent = `${voltage} V`;
   document.getElementById('voltage-display-bottom').textContent = `${voltage} V`;
 
