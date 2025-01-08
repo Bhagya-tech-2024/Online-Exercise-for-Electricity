@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; 
+  
+}
+
+.image-top {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%; 
+}
+
+.image-container {
+  position: relative;
+  width: 100%; 
+  max-width: 500px; 
+  height: auto;
+  margin-bottom: 2px; 
+}
+
+
+.meter-image {
+  width: 100%; 
+  height: auto; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlay-text {
+  position: absolute;
+  font-size: 0.6em;
+  color: black;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+#frequency-display {
+  top: 20%;
+  left: 9%;
+}
+
+#current-display {
+  top: 9%;
+  left:92%;
+}
+
+#capacitor-voltage-display {
+  top: 6%;
+  left: 61%;
+}
+
+#resistor-volatage-display {
+  top: 7%;
+  left: 78%;
+}
+
+#voltage-display {
+  top: 11%;
+  left: 9%;
+}
+
+
+.bottom-panels {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%; 
+  max-width: 500px; 
+  margin: 0 auto; 
+}
+
+.calculation-panel, .results-panel {
+  flex: 1; 
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.calculation-panel label {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.calculation-panel input {
+  padding: 5px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.calculation-panel button {
+  padding: 10px;
+  font-size: 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculation-panel button:hover {
+  background-color: #0056b3;
+}
+
+.results-panel {
+  padding: 15px;
+}
+
+#overload-strip {
+  width: 100%;
+  height: 10px;
+  background-color: lightgreen;
+}
+
+#overload-strip.overloaded {
+  background-color: red;
+}
+
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 0.3em; /* Scale text size for smaller screens */
+  }
+
+  .main-container {
+    max-width: 90%; /* responsiveness on smaller screens */
+  }
+}
