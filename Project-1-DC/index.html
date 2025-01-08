@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coil at AC voltage</title>
+  <title>Dynamic Meter-DC mode</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,47 +13,43 @@
       <div class="image-container">
         <img src="meter.png" alt="Meter" class="meter-image">
         <div class="overlay">
-          <div id="frequency-display" class="overlay-text">Hz</div>
           <div id="current-display" class="overlay-text">I(A)</div>
+          <div id="r1-voltage-display" class="overlay-text">(R1)V</div>
+          <div id="r2-voltage-display" class="overlay-text">(R2) V</div>
           <div id="voltage-display" class="overlay-text">V</div>
           <div id="voltage-display-bottom" class="overlay-text">V</div>
         </div>
       </div>
     </div>
-    
 
     <!-- Bottom Panels -->
     <div class="bottom-panels">
       <!-- Calculation Panel (Left) -->
       <div class="calculation-panel">
         <h2>Calculation Panel</h2>
-        <label for="inductance1">Enter Inductance (mH):</label>
-        <input type="number" id="inductance1" placeholder="I">
-
         <label for="voltage">Enter Voltage (V):</label>
         <input type="number" id="voltage" placeholder="Voltage">
 
-        <label for="frequency">Enter Frequency (Hz):</label>
-        <input type="number" id="frequency" placeholder="Frequency">
+        <label for="resistor1">Enter Resistor R1 (Ω):</label>
+        <input type="number" id="resistor1" placeholder="R1">
 
-      
+        <label for="resistor2">Enter Resistor R2 (Ω):</label>
+        <input type="number" id="resistor2" placeholder="R2">
 
-        <button onclick="calculate()">Calculate</button>
+        <button onclick="calculateDC()">Calculate</button>
       </div>
 
       <!-- Results Panel (Right) -->
       <div class="results-panel">
         <h3>Results:</h3>
         <p><strong>Voltage:</strong> <span id="result-voltage">0 V</span></p>
-        <p><strong>Frequency:</strong> <span id="result-frequency">0 Hz</span></p>
-        <p><strong>Inductance:</strong> <span id="result-inductance">0 mH</span></p>
-        <p><strong>Inductive Reactance:</strong> <span id="result-inductive-reactance">0 Ω</span></p>
         <p><strong>Current:</strong> <span id="result-current">0 A</span></p>
+        <p><strong>Voltage across R1:</strong> <span id="result-r1-voltage">0 V</span></p>
+        <p><strong>Voltage across R2:</strong> <span id="result-r2-voltage">0 V</span></p>
         <div id="overload-strip" class="overload-strip"></div>
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

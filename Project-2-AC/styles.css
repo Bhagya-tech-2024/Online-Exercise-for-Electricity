@@ -28,17 +28,17 @@ body {
   .image-container {
     position: relative;
     width: 100%; 
-    max-width: 895px; 
+    max-width: 500px; 
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 2px; 
     margin-top: 20px;
+    
   }
   
+  
   .meter-image {
-    width: 100%;
-    height: auto;
-    max-width: 895px; 
-    max-height: 548px; 
+    width: 100%; 
+    height: auto; 
   }
   
   .overlay {
@@ -59,24 +59,33 @@ body {
   }
   
   #frequency-display {
-    top: 23%;
+    top: 16%;
     left: 9%;
   }
   
   #current-display {
-    top: 8%;
-    left: 68%;
+    top: 7%;
+    left: 61%;
   }
   
+  #current1-display {
+    top: 7%;
+    left: 76%;
+  }
+  
+  #current2-display {
+    top: 7%;
+    left: 91.5%; /*changed */
+  }
   
   #voltage-display {
-    top:13%;
+    top:9%;
     left: 9%;
   }
   
   #voltage-display-bottom {
     bottom: 54%;
-    right: 8%;
+    left: 27%;
   }
   
   .bottom-panels {
@@ -144,15 +153,5 @@ body {
   
     .main-container {
       max-width: 90%; /* responsiveness on smaller screens */
-    }
-  }
-
-  @media (min-width: 2560px) {
-    .image-container {
-      max-width: 1200px; /* Scale image for large screens */
-    }
-  
-    .meter-image {
-      max-width: 1200px;
     }
   }

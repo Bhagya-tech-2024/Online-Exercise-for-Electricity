@@ -1,19 +1,17 @@
 function calculate() {
   // Get values from inputs
-  const inductance1 = parseFloat(document.getElementById('inductance1').value);
   const voltage = parseFloat(document.getElementById('voltage').value);
   const frequency = parseFloat(document.getElementById('frequency').value);
+  const resistor1 = parseFloat(document.getElementById('resistor1').value);
+  const resistor2 = parseFloat(document.getElementById('resistor2').value);
 
-  // Convert inductance to Henries
-  const inductance = inductance1 / 1000;
+  // Basic calculations for current and voltages across R1 and R2
+  const totalResistance = resistor1 + resistor2;
+  const current = voltage / totalResistance; 
+  const voltageAcrossR1 = current * resistor1;
+  const voltageAcrossR2 = current * resistor2;
 
-  // Calculate inductive reactance
-  const inductiveReactance = 2 * Math.PI * frequency * inductance;
-
-  // Calculate current (ensure reactance is not zero to avoid division by zero)
-  const current = inductiveReactance !== 0 ? voltage / inductiveReactance : 0;
-
-  // Format current display
+  // Format current based on its value
   let currentDisplay = "";
   if (current >= 0.1) {
     currentDisplay = `${current.toFixed(2)} A`;
@@ -27,12 +25,14 @@ function calculate() {
   document.getElementById('result-voltage').textContent = `${voltage} V`;
   document.getElementById('result-frequency').textContent = `${frequency} Hz`;
   document.getElementById('result-current').textContent = currentDisplay;
-  document.getElementById('result-inductance').textContent = `${inductance1.toFixed(3)} mH`;
-  document.getElementById('result-inductive-reactance').textContent = `${inductiveReactance.toFixed(2)} Ω`;
+  document.getElementById('result-r1-voltage').textContent = `${voltageAcrossR1.toFixed(2)} V`;
+  document.getElementById('result-r2-voltage').textContent = `${voltageAcrossR2.toFixed(2)} V`;
 
-  // Update the image overlay text with calculated values
+  // Update the image overlay text with the calculated values
   document.getElementById('frequency-display').textContent = `${frequency} Hz`;
   document.getElementById('current-display').textContent = currentDisplay;
+  document.getElementById('r1-voltage-display').textContent = `${voltageAcrossR1.toFixed(2)} V`;
+  document.getElementById('r2-voltage-display').textContent = `${voltageAcrossR2.toFixed(2)} V`;
   document.getElementById('voltage-display').textContent = `${voltage} V`;
   document.getElementById('voltage-display-bottom').textContent = `${voltage} V`;
 
