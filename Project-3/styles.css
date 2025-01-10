@@ -60,7 +60,7 @@ h1 {
   
   .overlay-text {
     position: absolute;
-    font-size: 0.5em;
+    font-size: 0.8em;
     color: black;
     font-weight: bold;
     transform: translate(-50%, -50%);
