@@ -9,6 +9,10 @@ body {
   background-color: #f4f4f9;
 }
 
+h1 {
+  font-size: medium;
+  padding-top: 100px;
+}
 .main-container {
   display: flex;
   flex-direction: column;

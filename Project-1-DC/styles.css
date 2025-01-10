@@ -9,6 +9,12 @@ body {
   background-color: #f4f4f9;
 }
 
+h1 {
+  font-size: medium;
+  padding-top: 40px;
+
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -57,17 +63,17 @@ body {
 }
 
 #current-display {
-  top: 8%;
+  top: 7%;
   left: 61%;
 }
 
 #r1-voltage-display {
-  top: 8%;
+  top: 7%;
   left: 76%;
 }
 
 #r2-voltage-display {
-  top: 8%;
+  top: 7%;
   left: 92%;
 }
 
