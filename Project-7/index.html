@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Head</h1>
+    <!-- Image with Overlay Text (Top) -->
+    <div class="image-top">
+      <div class="image-container">        
+        <img src="meter.png" alt="Meter" class="meter-image">
+        <div class="overlay">
+          <div id="voltage1-display" class="overlay-text">U1</div>
+          <div id="voltage2-display" class="overlay-text">U2</div>
+          <div id="current1-display" class="overlay-text">I1</div>
+          <div id="current2-display" class="overlay-text">I2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Panels -->
+    <div class="bottom-panels">
+      <!-- Calculation Panel (Left) -->
+      <div class="calculation-panel">
+        <h2>Calculation Panel</h2>
+        <label for="N1">Enter Number of turns in the primary coil :</label>
+        <input type="number" id="N1" placeholder="Turnsprimary">
+
+        <label for="N2">Enter Number of turns in the secondary coil:</label>
+        <input type="number" id="N2" placeholder="Turnsecondary">
+
+        <label for="voltage1">Enter Voltage in the primary coil (V):</label>
+        <input type="number" id="voltage1" placeholder="V1">
+
+        <label for="resistor">Enter Resistance ():</label>
+        <input type="number" id="resistor" placeholder="R1">
+
+        <button onclick="calculate()">Calculate</button>
+      </div>
+
+      <!-- Results Panel (Right) -->
+      <div class="results-panel">
+        <h3>Results:</h3>
+        <p><strong>Voltage1:</strong> <span id="result-voltage1">0 V</span></p>
+        <p><strong>Voltage2:</strong> <span id="result-voltage2">0 V</span></p>
+        <p><strong>Current1:</strong> <span id="result-current1">0 A</span></p>
+        <p><strong>Current2:</strong> <span id="result-current1">0 A</span></p>
+        <h2>Current 1</h2>
+        <div id="overload-strip" class="overload-strip"></div><br>
+        <h2>Current 2</h2>
+        <div id="overload-strip1" class="overload-strip1"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
