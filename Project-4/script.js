@@ -13,25 +13,25 @@ function calculate() {
 
   // Format current display
   let currentDisplay = "";
-  if (current >= 0.1) {
+  if (current >= 1) {
     currentDisplay = `${current.toFixed(2)} A`;
   } else if (current >= 0.001) {
-    currentDisplay = `${(current * 1000).toFixed(2)} mA`;
+    currentDisplay = `${(current * 1000).toFixed(1)} mA`;
   } else {
-    currentDisplay = `${(current * 1_000_000).toFixed(2)} μA`;
+    currentDisplay = `${(current * 1_000_000).toFixed(1)} μA`;
   }
 
   // Update the results panel
   document.getElementById('result-voltage').textContent = `${voltage} V`;
   document.getElementById('result-frequency').textContent = `${frequency} Hz`;
   document.getElementById('result-current').textContent = currentDisplay;
-  document.getElementById('result-capacitance').textContent = `${(capacitance * 1e6).toFixed(3)} μF`; // Convert back to µF for display
-  document.getElementById('result-capacitive-reactance').textContent = `${capacitivereactance.toFixed(2)} Ω`;
+  document.getElementById('result-capacitance').textContent = `${(capacitance * 1e6).toFixed(1)} μF`; // Convert back to µF for display
+  document.getElementById('result-capacitive-reactance').textContent = `${capacitivereactance.toFixed(1)} Ω`;
 
   // Update the image overlay text with calculated values
-  document.getElementById('frequency-display').textContent = `${frequency} Hz`;
+  document.getElementById('frequency-display').textContent = `${frequency}`;
   document.getElementById('current-display').textContent = currentDisplay;
-  document.getElementById('voltage-display').textContent = `${voltage} V`;
+  document.getElementById('voltage-display').textContent = `${voltage}`;
   document.getElementById('voltage-display-bottom').textContent = `${voltage} V`;
 
   // Update overload strip color based on current
