@@ -3,10 +3,17 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   height: 100vh;
   background-color: #f4f4f9;
+}
+
+h1 {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
 }
 
 .main-container {
@@ -21,7 +28,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-top:10%;
+  
 }
 
 .image-container {
@@ -79,8 +86,8 @@ body {
 }
 
 #voltage-display-bottom {
-  bottom: 44%;
-  left: 13%;
+  bottom: 48%;
+  left: 27%;
 }
 
 .bottom-panels {
