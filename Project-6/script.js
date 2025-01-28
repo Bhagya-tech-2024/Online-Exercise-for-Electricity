@@ -31,11 +31,11 @@ function calculate() {
   document.getElementById('result-capacitor-voltage').textContent = `${voltageacrosscapacitor.toFixed(2)} V`;
 
   // Update the image overlay text with the calculated values
-  document.getElementById('frequency-display').textContent = `${frequency} Hz`;
+  document.getElementById('frequency-display').textContent = `${frequency} `;
   document.getElementById('current-display').textContent = currentDisplay;
   document.getElementById('resistor-volatage-display').textContent = `${voltageacrossresistor.toFixed(2)} V`;
   document.getElementById('capacitor-voltage-display').textContent = `${voltageacrosscapacitor.toFixed(2)} V`;
-  document.getElementById('voltage-display').textContent = `${voltage} V`;
+  document.getElementById('voltage-display').textContent = `${voltage} `;
   
 
   // Update overload strip color based on current
