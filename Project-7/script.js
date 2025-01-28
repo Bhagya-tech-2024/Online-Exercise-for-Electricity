@@ -40,7 +40,7 @@ function calculate() {
   document.getElementById('voltage1-display').textContent = `${voltage1} V`;
   document.getElementById('voltage2-display').textContent = `${voltage2} V`;
   document.getElementById('current1-display').textContent = current1Display;
-  document.getElementById('current21-display').textContent = current2Display;
+  document.getElementById('current2-display').textContent = current2Display;
   
   
 

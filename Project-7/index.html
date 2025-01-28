@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>Transformer Calculator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="main-container">
-    <h1>Head</h1>
+    <h1>Transformer Calculator</h1>
     <!-- Image with Overlay Text (Top) -->
     <div class="image-top">
       <div class="image-container">        
@@ -28,15 +28,15 @@
       <div class="calculation-panel">
         <h2>Calculation Panel</h2>
         <label for="N1">Enter Number of turns in the primary coil :</label>
-        <input type="number" id="N1" placeholder="Turnsprimary">
+        <input type="number" id="N1" placeholder="Turns primary">
 
         <label for="N2">Enter Number of turns in the secondary coil:</label>
-        <input type="number" id="N2" placeholder="Turnsecondary">
+        <input type="number" id="N2" placeholder="Turns secondary">
 
         <label for="voltage1">Enter Voltage in the primary coil (V):</label>
         <input type="number" id="voltage1" placeholder="V1">
 
-        <label for="resistor">Enter Resistance ():</label>
+        <label for="resistor">Enter Resistance (Ω):</label>
         <input type="number" id="resistor" placeholder="R1">
 
         <button onclick="calculate()">Calculate</button>
@@ -48,11 +48,11 @@
         <p><strong>Voltage1:</strong> <span id="result-voltage1">0 V</span></p>
         <p><strong>Voltage2:</strong> <span id="result-voltage2">0 V</span></p>
         <p><strong>Current1:</strong> <span id="result-current1">0 A</span></p>
-        <p><strong>Current2:</strong> <span id="result-current1">0 A</span></p>
+        <p><strong>Current2:</strong> <span id="result-current2">0 A</span></p>
         <h2>Current 1</h2>
         <div id="overload-strip" class="overload-strip"></div><br>
         <h2>Current 2</h2>
-        <div id="overload-strip1" class="overload-strip1"></div>
+        <div id="overload-strip1" class="overload-strip"></div>
       </div>
     </div>
   </div>
