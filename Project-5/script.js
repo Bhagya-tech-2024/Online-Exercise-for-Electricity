@@ -26,10 +26,10 @@ function calculate() {
   document.getElementById('result-capacitor-current').textContent = `${(capacitorCurrent * 1000).toFixed(2)} mA`;
 
   // Update overlay text
-  document.getElementById('frequency-display').textContent = `${frequency} Hz`;
+  document.getElementById('frequency-display').textContent = `${frequency} `;
   document.getElementById('resistor-current-display').textContent = `${(resistorCurrent * 1000).toFixed(1)} mA`;
   document.getElementById('inductor-current-display').textContent = `${(inductorCurrent * 1000).toFixed(1)} mA`;
   document.getElementById('capacitor-current-display').textContent = `${(capacitorCurrent * 1000).toFixed(1)} mA`;
-  document.getElementById('voltage-display').textContent = `${voltage} V`;
+  document.getElementById('voltage-display').textContent = `${voltage} `;
   document.getElementById('voltage-display-bottom').textContent = `${voltage} V`;
 }

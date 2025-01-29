@@ -72,7 +72,7 @@ h1 {
 
 #inductor-current-display {
   top: 8%;
-  left: 76%;
+  left: 77%;
 }
 
 #capacitor-current-display {
@@ -96,16 +96,17 @@ h1 {
   justify-content: space-between;
   gap: 15px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .calculation-panel, .results-panel {
-  flex: 1;
+  flex: 1.2;
   padding: 10px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 5px;
+  min-width: 280px;
 }
 
 .calculation-panel label {
@@ -146,4 +147,13 @@ h1 {
   .main-container {
     max-width: 90%;
   }
-}
+
+  .bottom-panels {
+      flex-direction: column; 
+    }
+  
+  .calculation-panel, .results-panel {
+      width: 100%; 
+    }
+  }
+
