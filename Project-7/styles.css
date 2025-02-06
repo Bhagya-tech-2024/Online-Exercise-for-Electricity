@@ -3,27 +3,30 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   height: 100vh;
   background-color: #f4f4f9;
 }
 
 h1 {
+  text-align: center;
+  margin-bottom: 1px;
   font-size: medium;
-  padding-top: 100px;
+  color: #333;
 }
 
-h2 {
-  font-size: small;
-}
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 700px; 
-  
+  max-width: 700px;
+}
+
+h2 {
+  font-size: small;
 }
 
 .image-top {
@@ -82,7 +85,7 @@ h2 {
 
 #current2-display {
   bottom:36%;
-  right: 26%;
+  right: 27%;
 }
 
 
