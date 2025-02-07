@@ -43,19 +43,4 @@ function calculate() {
   document.getElementById('current2-display').textContent = current2Display;
   
   
-
-  // Update overload strip color based on current
-  const overloadStrip = document.getElementById('overload-strip');
-  if (current1 > 200) {
-    overloadStrip.classList.add('overloaded');
-  } else {
-    overloadStrip.classList.remove('overloaded');
-  }
-
-  const overloadStrip1 = document.getElementById('overload-strip1');
-  if (current2 > 200) {
-    overloadStrip1.classList.add('overloaded');
-  } else {
-    overloadStrip1.classList.remove('overloaded');
-  }
 }
