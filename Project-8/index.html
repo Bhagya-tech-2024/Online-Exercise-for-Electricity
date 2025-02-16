@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resistor and coil in series in AC circuit.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Resistor and coil in series in AC circuit.</h1>
+
+    <!-- Image with Overlay Text (Top) -->
+    <div class="image-top">
+      <div class="image-container">
+        <img src="meter.png" alt="Meter" class="meter-image">
+        <div class="overlay">
+          <div id="frequency-display" class="overlay-text">f</div>
+          <div id="voltage-across-Inductor-display" class="overlay-text">UL</div>
+          <div id="voltage-across-Resistor-display" class="overlay-text">UR</div>
+          <div id="current-display" class="overlay-text">I(A)</div>
+          <div id="voltage-display" class="overlay-text">U</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Panels -->
+    <div class="bottom-panels">
+      <!-- Calculation Panel (Left) -->
+      <div class="calculation-panel">
+        <h2>Calculation Panel</h2>
+        <label for="voltage">Enter Voltage (V):</label>
+        <input type="number" id="voltage" placeholder="Voltage">
+
+        <label for="frequency">Enter Frequency f (Hz):</label>
+        <input type="number" id="frequency" placeholder="Frequency">
+
+        <label for="resistor">Enter Resistor R (Ω):</label>
+        <input type="number" id="resistor" placeholder="R">
+
+        <label for="inductance">Enter Inductance L (mH):</label>
+        <input type="number" id="inductance" placeholder="L">
+
+        <button onclick="calculate()">Calculate</button>
+      </div>
+
+      <!-- Results Panel (Right) -->
+      <div class="results-panel">
+        <h3>Results:</h3>
+        <p><strong>Inductive Reac:</strong> <span id="result-inductive-reactance">0 Ω</span></p>
+        <p><strong>Impedance:</strong> <span id="result-impedance">0 Ω</span></p>
+        <p><strong>Current:</strong> <span id="result-current">0 A</span></p>
+        <p><strong>Vol Across Resistor:</strong> <span id="result-resistor-volatage">0 V</span></p>
+        <p><strong>Vol Across Inductor:</strong> <span id="result-inductor-voltage">0 V</span></p>
+        <div id="overload-strip" class="overload-strip"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
