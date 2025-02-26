@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three-phase electrical circuit with resistive loads</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Three-phase electrical circuit with resistive loads</h1>
+    <!-- Image with Overlay Text (Top) -->
+    <div class="image-top">
+      <div class="image-container">        
+        <img src="meter.png" alt="Meter" class="meter-image">
+        <div class="overlay">
+          <div id="neutralvoltage-display" class="overlay-text">Up</div>
+          <div id="current1-display" class="overlay-text">I1</div>
+          <div id="current2-display" class="overlay-text">I2</div>
+          <div id="current3-display" class="overlay-text">I3</div>
+          <div id="In-display" class="overlay-text">In</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Panels -->
+    <div class="bottom-panels">
+      <!-- Calculation Panel (Left) -->
+      <div class="calculation-panel">
+        <h2>Calculation Panel</h2>
+        <label for="V1">Enter neutral voltage :</label>
+        <input type="number" id="V1" placeholder="neutral voltage">
+
+        <label for="V2">Enter voltage across each resistor:</label>
+        <input type="number" id="V2" placeholder="voltage">
+
+        <label for="resistor1">Enter Resistance1 (Ω):</label>
+        <input type="number" id="resistor1" placeholder="R1">
+
+        <label for="resistor2">Enter Resistance2 (Ω):</label>
+        <input type="number" id="resistor2" placeholder="R2">
+
+        <label for="resistor3">Enter Resistance3 (Ω):</label>
+        <input type="number" id="resistor3" placeholder="R3">
+        
+        <label for="resistor2">Enter θ1 (rad):</label>
+        <input type="number" id="θ1" placeholder="θ1">
+        
+        <label for="resistor2">Enter θ2 (rad):</label>
+        <input type="number" id="θ2" placeholder="θ2">
+
+        <label for="resistor2">Enter θ3 (rad):</label>
+        <input type="number" id="θ3" placeholder="θ3">
+
+        <button onclick="calculate()">Calculate</button>
+      </div>
+
+      <!-- Results Panel (Right) -->
+      <div class="results-panel">
+        <h3>Results:</h3>
+        <p><strong>Neutral current:</strong> <span id="result-neutral-current">0 A</span></p>
+        <p><strong>Total-Power:</strong> <span id="result-Power">0 W</span></p>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
