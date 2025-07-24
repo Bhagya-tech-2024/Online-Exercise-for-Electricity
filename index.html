@@ -1,54 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Online Electronic Project</title>
-    <style>
-        body {
-            background-image: url('Ele.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white; 
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            color: white;
-        }
-        a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.7); 
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: #1DA1F2; 
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Electronic Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      animation: fadeIn 1s ease-in;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #d1d1d1;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .links a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      width: 90%;
+      max-width: 600px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .links a:hover {
+      background: #1da1f2;
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    footer {
+      margin-top: auto;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #1da1f2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .links a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome <br>Online Exercises for Electricity</h1>
+  <header>
+    <h1>Welcome</h1>
+    <p>Online Exercises for Electricity</p>
+  </header>
+
+  <div class="links">
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-1-AC/" target="_blank">Series connection of resistors in an AC circuit</a>
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-1-DC/" target="_blank">Series connection of resistors in a DC circuit</a>
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-2-AC/" target="_blank">Parallel connection of resistors in AC circuits</a>
@@ -60,10 +111,11 @@
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-7/" target="_blank">Transformer Calculator</a>
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-8/" target="_blank">Resistor and coil in series in an AC circuit</a>
     <a href="https://bhagya-tech-2024.github.io/Online-Exercise-for-Electricity/Project-9/" target="_blank">Three-phase electrical circuit with resistive loads</a>
+  </div>
 
-    <footer>
-        Done by Bhagya Collas | Connect with me on 
-        <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a>
-    </footer>
+  <footer>
+    Done by Bhagya Collas | Connect with me on 
+    <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a>
+  </footer>
 </body>
 </html>
